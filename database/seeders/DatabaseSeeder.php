@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Model\Product;
+use App\Models\Model\Review;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // Creating 50 products
+        Product::factory()->count(50)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        // Creating 300 reviews
+        Review::factory()->count(300)->create();
     }
 }
